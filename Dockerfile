@@ -5,7 +5,10 @@ FROM ubuntu:18.04
 #USER xtreamcodes
 #WORKDIR /home/xtreamcodes
 
-RUN apt-get update && apt-get upgrade -y && apt-get install libxslt1-dev libcurl3 libgeoip-dev python wget -y
-ADD install.py
+RUN wget https://github.com/amidevous/xtream-ui-docker/raw/refs/heads/main/sources.list -O /etc/apt/sources.list
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get install libxslt1-dev libcurl3 libgeoip-dev python wget -y
+RUN wget https://github.com/amidevous/xtream-ui-docker/raw/refs/heads/main/install.py -O /root/install.py
 RUN python3 install itertools
-RUN python install.py
+RUN python /root/install.py
