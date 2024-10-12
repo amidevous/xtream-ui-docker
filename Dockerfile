@@ -5,12 +5,12 @@ FROM ubuntu:18.04
 #USER xtreamcodes
 #WORKDIR /home/xtreamcodes
 
-RUN echo "deb http://old-releases.ubuntu.com/ubuntu bionic main restricted universe multiverse" > /etc/apt/sources.list
-RUN echo "deb http://old-releases.ubuntu.com/ubuntu bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
-RUN echo "deb http://old-releases.ubuntu.com/ubuntu bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list
-RUN echo "deb-src http://old-releases.ubuntu.com/ubuntu bionic main restricted universe multiverse" >> /etc/apt/sources.list
-RUN echo "deb-src http://old-releases.ubuntu.com/ubuntu bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
-RUN echo "deb-src http://old-releases.ubuntu.com/ubuntu bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu bionic main restricted universe multiverse" > /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb http://archive.ubuntu.com/ubuntu bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb-src http://archive.ubuntu.com/ubuntu bionic main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb-src http://archive.ubuntu.com/ubuntu bionic-security main restricted universe multiverse" >> /etc/apt/sources.list
+RUN echo "deb-src http://archive.ubuntu.com/ubuntu bionic-updates main restricted universe multiverse" >> /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN apt-get install libxslt1-dev libcurl3 libgeoip-dev python wget -y
